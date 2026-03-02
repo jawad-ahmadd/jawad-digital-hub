@@ -1,337 +1,82 @@
- Features Included:
-1.  **Luxury Theme**: Solid Black background with #D4AF37 Gold accents.
-2.  **Typography**: Uses 'Montserrat' for a premium look.
-3.  **Desktop**: Logo left, 5 centered links, Gold-filled button right.
-4.  **Mobile**: Hamburger icon triggers a full-screen overlay sliding from the right (300ms ease).
-5.  **Interactivity**: Smooth JavaScript toggle with body scroll locking when the menu is open.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAWAD HUB Navigation</title>
-    <!-- Google Fonts for Premium Look -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+    <title>Jawad Digital Hub | Premier Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
     <style>
-        /* --- CSS VARIABLES --- */
-        :root {
-            --primary-black: #000000;
-            --luxury-gold: #D4AF37;
-            --text-white: #ffffff;
-            --text-gray: #cccccc;
-            --transition-speed: 0.3s;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #111; /* Demo background */
-            color: var(--text-white);
-            overflow-x: hidden;
-        }
-
-        /* --- NAVBAR CONTAINER --- */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: var(--primary-black);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1); /* Subtle gold border */
-        }
-
-        /* --- LOGO --- */
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: var(--text-white);
-            text-transform: uppercase;
-            z-index: 1001;
-        }
-
-        .logo span {
-            color: var(--luxury-gold);
-        }
-
-        /* --- DESKTOP NAVIGATION --- */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-            /* Centering logic */
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .nav-links li a {
-            text-decoration: none;
-            color: var(--text-white);
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color var(--transition-speed);
-            position: relative;
-        }
-
-        /* Gold Underline Hover Effect */
-        .nav-links li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--luxury-gold);
-            transition: width var(--transition-speed);
-        }
-
-        .nav-links li a:hover {
-            color: var(--luxury-gold);
-        }
-
-        .nav-links li a:hover::after {
-            width: 100%;
-        }
-
-        /* --- CTA BUTTON --- */
-        .cta-button {
-            padding: 12px 30px;
-            background-color: var(--luxury-gold);
-            color: var(--primary-black);
-            text-decoration: none;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            border: 1px solid var(--luxury-gold);
-            transition: all var(--transition-speed);
-            z-index: 1001;
-        }
-
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--luxury-gold);
-        }
-
-        /* --- HAMBURGER MENU (Mobile) --- */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            z-index: 1001;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .hamburger div {
-            width: 30px;
-            height: 2px;
-            background-color: var(--text-white);
-            transition: all var(--transition-speed);
-        }
-
-        .hamburger.active div:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 6px);
-            background-color: var(--luxury-gold);
-        }
-
-        .hamburger.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active div:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -6px);
-            background-color: var(--luxury-gold);
-        }
-
-        /* --- MOBILE OVERLAY --- */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: var(--primary-black);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transform: translateX(100%); /* Hidden by default */
-            transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-            z-index: 999;
-        }
-
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-
-        .mobile-nav-links {
-            list-style: none;
-            text-align: center;
-        }
-
-        .mobile-nav-links li {
-            margin: 25px 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-        }
-
-        /* Staggered animation for links when menu opens */
-        .mobile-menu.active .mobile-nav-links li {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .mobile-menu.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.2s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.3s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.4s; }
-        .mobile-menu.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.5s; }
-
-        .mobile-nav-links li a {
-            text-decoration: none;
-            color: var(--text-white);
-            font-size: 1.5rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: color 0.2s;
-        }
-
-        .mobile-nav-links li a:hover {
-            color: var(--luxury-gold);
-        }
-
-        /* Social Icons in Overlay */
-        .mobile-socials {
-            position: absolute;
-            bottom: 40px;
-            display: flex;
-            gap: 25px;
-        }
-
-        .mobile-socials a {
-            color: var(--text-white);
-            font-size: 1.2rem;
-            transition: color 0.2s;
-        }
-
-        .mobile-socials a:hover {
-            color: var(--luxury-gold);
-        }
-
-        /* --- MEDIA QUERIES --- */
-        @media (max-width: 1024px) {
-            /* Tablet adjustments */
-            .nav-links {
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            /* Hide Desktop Elements */
-            .nav-links, .cta-button {
-                display: none;
-            }
-
-            /* Show Hamburger */
-            .hamburger {
-                display: flex;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: black; color: white; }
+        .serif-font { font-family: 'Playfair Display', serif; }
+        .gold-glow { box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <!-- Logo -->
-        <a href="#" class="logo">Jawad<span>Hub</span></a>
+    <nav class="fixed top-0 w-full z-[100] px-6 py-5 md:px-12 flex justify-between items-center bg-black/80 backdrop-blur-lg border-b border-yellow-600/10">
+        <a href="#home" class="flex items-center space-x-2 group">
+            <div class="w-10 h-10 bg-gradient-to-tr from-yellow-700 to-yellow-400 flex items-center justify-center rounded-xl gold-glow group-hover:scale-110 transition-transform">
+                <span class="text-black font-black text-lg">J</span>
+            </div>
+            <div class="text-xl font-black tracking-tighter uppercase text-white">
+                JAWAD<span class="text-yellow-500">HUB</span>
+            </div>
+        </a>
 
-        <!-- Desktop Navigation -->
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Pricing</a></li>
-        </ul>
+        <div class="hidden md:flex flex-1 justify-center space-x-12 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
+            <a href="#home" class="hover:text-yellow-500 transition-colors">Home</a>
+            <a href="#about" class="hover:text-yellow-500 transition-colors">About</a>
+            <a href="#services" class="hover:text-yellow-500 transition-colors">Services</a>
+            <a href="#portfolio" class="hover:text-yellow-500 transition-colors">Portfolio</a>
+        </div>
 
-        <!-- Desktop CTA -->
-        <a href="#" class="cta-button">Let's Talk</a>
-
-        <!-- Mobile Hamburger -->
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="flex items-center space-x-6">
+            <a href="mailto:jawadriaz2009@gmail.com" class="hidden md:block bg-yellow-600 text-black px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white transition-all">
+                Let's Talk
+            </a>
+            <button id="open-menu" class="md:hidden text-yellow-500 focus:outline-none">
+                <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
+            </button>
         </div>
     </nav>
 
-    <!-- Mobile Fullscreen Overlay -->
-    <div class="mobile-menu" id="mobile-menu">
-        <ul class="mobile-nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Pricing</a></li>
-        </ul>
-        
-        <!-- Social Icons -->
-        <div class="mobile-socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-behance"></i></a>
+    <div id="side-drawer" class="fixed inset-0 bg-black z-[110] transform translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+        <div class="p-8 h-full flex flex-col justify-between">
+            <div class="flex justify-between items-center border-b border-yellow-600/10 pb-6">
+                <span class="text-white font-black text-2xl tracking-tighter">JAWAD<span class="text-yellow-500">HUB</span></span>
+                <button id="close-menu" class="text-yellow-500 text-5xl font-light">&times;</button>
+            </div>
+            
+            <nav class="flex flex-col items-center space-y-10 text-white text-3xl font-bold uppercase tracking-tighter">
+                <a href="#home" class="m-link hover:text-yellow-500">Home</a>
+                <a href="#about" class="m-link hover:text-yellow-500">About</a>
+                <a href="#services" class="m-link hover:text-yellow-500">Services</a>
+                <a href="#portfolio" class="m-link hover:text-yellow-500">Portfolio</a>
+            </nav>
+
+            <div class="flex justify-center space-x-10 pb-8 text-yellow-600 text-xs font-bold tracking-widest uppercase">
+                <span>Instagram</span>
+                <span>LinkedIn</span>
+            </div>
         </div>
     </div>
 
+    <main>
+        </main>
+
     <script>
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const body = document.body;
+        const openBtn = document.getElementById('open-menu');
+        const closeBtn = document.getElementById('close-menu');
+        const drawer = document.getElementById('side-drawer');
+        const links = document.querySelectorAll('.m-link');
 
-        hamburger.addEventListener('click', () => {
-            // Toggle classes
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            
-            // Toggle Body Scroll Lock
-            if (mobileMenu.classList.contains('active')) {
-                body.style.overflow = 'hidden'; // Prevent scrolling
-            } else {
-                body.style.overflow = 'auto'; // Restore scrolling
-            }
-        });
-
-        // Close menu when clicking a link
-        const mobileLinks = document.querySelectorAll('.mobile-nav-links li a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = 'auto';
-            });
+        openBtn.onclick = () => drawer.classList.remove('translate-x-full');
+        closeBtn.onclick = () => drawer.classList.add('translate-x-full');
+        links.forEach(link => {
+            link.onclick = () => drawer.classList.add('translate-x-full');
         });
     </script>
+
 </body>
 </html>
-```
