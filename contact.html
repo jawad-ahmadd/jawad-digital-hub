@@ -3,78 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Jawad Digital Agency</title>
+    <title>Contact Us | JAWADHUB</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-black text-white selection:bg-yellow-600 selection:text-black">
+<body class="bg-black text-white selection:bg-yellow-600 selection:text-black font-sans">
 
     <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-black tracking-tighter flex items-center gap-2">
                 <span class="bg-yellow-600 text-black px-2 py-0.5 rounded">J</span> JAWADHUB
             </div>
-            <div class="hidden md:flex space-x-8 text-[10px] font-black uppercase tracking-widest">
-                <a href="index.html#home" class="hover:text-yellow-600 transition-colors">Home</a>
-                <a href="index.html#about" class="hover:text-yellow-600 transition-colors">About</a>
-                <a href="index.html#services" class="hover:text-yellow-600 transition-colors">Services</a>
-                <a href="index.html#pricing" class="hover:text-yellow-600 transition-colors">Pricing</a>
+            
+            <div class="hidden md:flex space-x-8 text-[10px] font-black uppercase tracking-widest text-gray-400">
+                <a href="index.html#home" class="hover:text-yellow-500 transition-colors">Home</a>
+                <a href="index.html#about" class="hover:text-yellow-500 transition-colors">About</a>
+                <a href="index.html#services" class="hover:text-yellow-500 transition-colors">Services</a>
+                <a href="index.html#pricing" class="hover:text-yellow-500 transition-colors">Pricing</a>
+                <a href="index.html#portfolio" class="hover:text-yellow-500 transition-colors">Portfolio</a>
             </div>
-            <a href="https://wa.me/923117558876" class="bg-yellow-600 text-black px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white transition-all">Let's Talk</a>
+
+            <div class="flex items-center space-x-6">
+                <a href="contact.html" class="hidden md:block bg-yellow-600 text-black px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest hover:bg-white transition-all">
+                    Let's Talk
+                </a>
+                <button id="open-menu" class="md:hidden text-yellow-500 focus:outline-none">
+                    <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <section class="pt-40 pb-24 px-6">
+    <section class="pt-40 pb-24 px-6 min-h-screen">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span class="text-yellow-600 font-black tracking-[0.5em] text-xs uppercase block mb-4">Get In Touch</span>
-                    <h1 class="text-5xl md:text-7xl font-black uppercase mb-8 leading-none">Let's Build Your <span class="text-gray-500 text-outline">Legacy.</span></h1>
+                    <span class="text-yellow-600 font-black tracking-[0.5em] text-[10px] uppercase block mb-4">Inquiry</span>
+                    <h1 class="text-5xl md:text-8xl font-black uppercase mb-8 leading-none">Start Your <span class="text-gray-500">Project.</span></h1>
+                    <p class="text-gray-400 text-sm mb-12 max-w-md">Ready to scale your business? Fill out the form or book a direct strategy call below.</p>
                     
-                    <form action="#" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" placeholder="FULL NAME" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-xs font-bold tracking-widest">
-                            <input type="email" placeholder="EMAIL ADDRESS" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-xs font-bold tracking-widest">
-                        </div>
-                        <select class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-xs font-bold tracking-widest text-gray-400">
-                            <option>SELECT SERVICE</option>
-                            <option>Starter Plan ($999)</option>
-                            <option>Professional Plan ($1,999)</option>
-                            <option>Enterprise / Custom</option>
-                        </select>
-                        <textarea rows="5" placeholder="TELL US ABOUT YOUR PROJECT" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-xs font-bold tracking-widest"></textarea>
-                        <button class="w-full bg-yellow-600 text-black py-5 rounded-xl font-black uppercase text-xs tracking-[0.3em] hover:bg-white transition-all">Send Message</button>
+                    <form action="#" class="space-y-4">
+                        <input type="text" placeholder="YOUR NAME" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-[10px] font-bold tracking-widest">
+                        <input type="email" placeholder="EMAIL ADDRESS" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-[10px] font-bold tracking-widest">
+                        <textarea rows="4" placeholder="HOW CAN WE HELP?" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-[10px] font-bold tracking-widest"></textarea>
+                        <button class="w-full bg-yellow-600 text-black py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-white transition-all">Send Inquiry</button>
                     </form>
                 </div>
 
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col justify-center text-center">
-                    <h3 class="text-2xl font-black uppercase mb-4">Schedule a Call</h3>
-                    <p class="text-gray-400 text-sm mb-8 leading-relaxed">Prefer a face-to-face discussion? Book a 15-minute discovery call with Jawad directly.</p>
-                    
-                    <div class="border-2 border-dashed border-white/10 rounded-2xl p-12 bg-black/40 mb-8">
-                        <i class="fa-solid fa-calendar-days text-4xl text-yellow-600 mb-4"></i>
-                        <p class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Meeting Widget Here</p>
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-10 text-center">
+                    <h3 class="text-xl font-black uppercase mb-6 tracking-widest text-yellow-500">Strategy Call</h3>
+                    <div class="border-2 border-dashed border-white/10 rounded-2xl p-16 mb-8 flex flex-col items-center">
+                        <i class="fa-solid fa-calendar-check text-4xl text-yellow-600 mb-4"></i>
+                        <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest">Calendly Widget</span>
                     </div>
-
-                    <div class="space-y-4">
-                        <a href="https://www.linkedin.com/in/jawad-ahmad-62251b388/" target="_blank" class="flex items-center justify-center gap-3 text-xs font-bold hover:text-yellow-600 transition-colors uppercase tracking-widest border border-white/5 py-3 rounded-full">
-                            <i class="fa-brands fa-linkedin text-lg"></i> Linkedin Profile
-                        </a>
-                    </div>
+                    <a href="https://www.linkedin.com/in/jawad-ahmad-62251b388/" target="_blank" class="text-[10px] font-black uppercase tracking-[0.3em] text-yellow-600/50 hover:text-yellow-600 transition-all">
+                        Follow on Linkedin
+                    </a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-[10px] font-black uppercase tracking-[0.5em] text-gray-500">
-                © 2026 Premier Digital Experience — Built by Jawad Ahmad
+    <footer class="py-20 bg-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-left mb-16">
+            <div>
+                <div class="text-xl font-black mb-6 tracking-tighter">JAWAD<span class="text-yellow-600">HUB</span></div>
+                <p class="text-gray-500 text-[10px] font-bold leading-relaxed uppercase tracking-widest">Elevating digital standards through elite design and high-performance engineering.</p>
+            </div>
+            <div>
+                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-6">Support</h4>
+                <div class="flex flex-col space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                    <a href="#" class="hover:text-yellow-600">Privacy Policy</a>
+                    <a href="#" class="hover:text-yellow-600">Terms & Conditions</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-6">Follow Us</h4>
+                <div class="flex space-x-6 text-gray-500">
+                    <a href="https://www.linkedin.com/in/jawad-ahmad-62251b388/" target="_blank" class="hover:text-yellow-600"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-6">Subscribe</h4>
+                <div class="relative">
+                    <input type="text" placeholder="Your Email" class="w-full bg-white/5 border border-white/10 py-3 px-4 rounded-lg text-[10px] outline-none focus:border-yellow-600">
+                    <button class="absolute right-3 top-3 text-yellow-600"><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
             </div>
         </div>
+        <div class="pt-8 border-t border-white/5 text-center px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-[9px] font-bold text-gray-600 uppercase tracking-[0.3em]">© 2026 JAWAD DIGITAL HUB. ALL RIGHTS RESERVED.</p>
+            <p class="text-[9px] font-bold text-gray-600 uppercase tracking-[0.3em]">CONTACT INFORMATION</p>
+        </div>
     </footer>
+
+    <a href="https://wa.me/923117558876" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center">
+        <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
+    </a>
 
 </body>
 </html>
