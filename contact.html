@@ -7,15 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-black text-white selection:bg-yellow-600 selection:text-black font-sans">
+<body class="bg-black text-white selection:bg-yellow-600 selection:text-black">
 
-    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <div class="text-2xl font-black tracking-tighter flex items-center gap-2">
                 <span class="bg-yellow-600 text-black px-2 py-0.5 rounded">J</span> JAWADHUB
             </div>
             
-            <div class="hidden md:flex space-x-8 text-[10px] font-black uppercase tracking-widest text-gray-400">
+            <div class="hidden md:flex flex-1 justify-center space-x-12 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
                 <a href="index.html#home" class="hover:text-yellow-500 transition-colors">Home</a>
                 <a href="index.html#about" class="hover:text-yellow-500 transition-colors">About</a>
                 <a href="index.html#services" class="hover:text-yellow-500 transition-colors">Services</a>
@@ -34,70 +34,74 @@
         </div>
     </nav>
 
-    <section class="pt-40 pb-24 px-6 min-h-screen">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="text-yellow-600 font-black tracking-[0.5em] text-[10px] uppercase block mb-4">Inquiry</span>
-                    <h1 class="text-5xl md:text-8xl font-black uppercase mb-8 leading-none">Start Your <span class="text-gray-500">Project.</span></h1>
-                    <p class="text-gray-400 text-sm mb-12 max-w-md">Ready to scale your business? Fill out the form or book a direct strategy call below.</p>
-                    
-                    <form action="#" class="space-y-4">
-                        <input type="text" placeholder="YOUR NAME" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-[10px] font-bold tracking-widest">
-                        <input type="email" placeholder="EMAIL ADDRESS" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-[10px] font-bold tracking-widest">
-                        <textarea rows="4" placeholder="HOW CAN WE HELP?" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:border-yellow-600 outline-none transition-all text-[10px] font-bold tracking-widest"></textarea>
-                        <button class="w-full bg-yellow-600 text-black py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-white transition-all">Send Inquiry</button>
-                    </form>
-                </div>
-
-                <div class="bg-white/5 border border-white/10 rounded-3xl p-10 text-center">
-                    <h3 class="text-xl font-black uppercase mb-6 tracking-widest text-yellow-500">Strategy Call</h3>
-                    <div class="border-2 border-dashed border-white/10 rounded-2xl p-16 mb-8 flex flex-col items-center">
-                        <i class="fa-solid fa-calendar-check text-4xl text-yellow-600 mb-4"></i>
-                        <span class="text-[10px] font-black text-gray-500 uppercase tracking-widest">Calendly Widget</span>
+    <main class="pt-40 pb-24 px-6 min-h-screen">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+                <span class="text-yellow-600 font-black tracking-[0.5em] text-[10px] uppercase block mb-6">Contact Us</span>
+                <h1 class="text-5xl md:text-8xl font-black uppercase mb-8 leading-none">Ready to <span class="text-gray-500">Engage?</span></h1>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="NAME" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl focus:border-yellow-600 outline-none text-[10px] font-bold tracking-widest">
+                        <input type="email" placeholder="EMAIL" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl focus:border-yellow-600 outline-none text-[10px] font-bold tracking-widest">
                     </div>
-                    <a href="https://www.linkedin.com/in/jawad-ahmad-62251b388/" target="_blank" class="text-[10px] font-black uppercase tracking-[0.3em] text-yellow-600/50 hover:text-yellow-600 transition-all">
-                        Follow on Linkedin
-                    </a>
+                    <textarea rows="4" placeholder="PROJECT DETAILS" class="w-full bg-white/5 border border-white/10 p-5 rounded-xl focus:border-yellow-600 outline-none text-[10px] font-bold tracking-widest"></textarea>
+                    <button class="w-full bg-yellow-600 text-black py-5 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-white transition-all shadow-lg shadow-yellow-600/10">Submit Request</button>
+                </form>
+            </div>
+            
+            <div class="bg-white/5 border border-white/10 rounded-[40px] p-12 text-center">
+                <h2 class="text-2xl font-black uppercase tracking-widest mb-6">Book a Meeting</h2>
+                <div class="aspect-video border-2 border-dashed border-white/10 rounded-3xl flex items-center justify-center mb-8">
+                    <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Calendly Scheduler Coming Soon</span>
+                </div>
+                <div class="flex justify-center space-x-8">
+                    <a href="https://www.linkedin.com/in/jawad-ahmad-62251b388/" class="text-gray-400 hover:text-yellow-600 transition-all uppercase text-[10px] font-bold tracking-widest">LinkedIn</a>
+                    <a href="https://wa.me/923117558876" class="text-gray-400 hover:text-yellow-600 transition-all uppercase text-[10px] font-bold tracking-widest">WhatsApp</a>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <footer class="py-20 bg-black border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 text-left mb-16">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16 text-left mb-20">
             <div>
-                <div class="text-xl font-black mb-6 tracking-tighter">JAWAD<span class="text-yellow-600">HUB</span></div>
-                <p class="text-gray-500 text-[10px] font-bold leading-relaxed uppercase tracking-widest">Elevating digital standards through elite design and high-performance engineering.</p>
+                <div class="text-xl font-black mb-8 tracking-tighter uppercase">JAWAD<span class="text-yellow-600">HUB</span></div>
+                <p class="text-gray-500 text-[10px] font-bold leading-relaxed uppercase tracking-[0.2em]">Elevating digital standards through elite design and high-performance engineering. Based in Pakistan, serving globally.</p>
             </div>
             <div>
-                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-6">Support</h4>
-                <div class="flex flex-col space-y-3 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
-                    <a href="#" class="hover:text-yellow-600">Privacy Policy</a>
-                    <a href="#" class="hover:text-yellow-600">Terms & Conditions</a>
+                <h4 class="text-[11px] font-black uppercase tracking-[0.4em] mb-8">Support</h4>
+                <div class="flex flex-col space-y-4 text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                    <a href="#" class="hover:text-yellow-600 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-yellow-600 transition-colors">Shipping Policy</a>
+                    <a href="#" class="hover:text-yellow-600 transition-colors">Terms & Conditions</a>
+                    <a href="#" class="hover:text-yellow-600 transition-colors">Refund & Exchange</a>
                 </div>
             </div>
             <div>
-                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-6">Follow Us</h4>
+                <h4 class="text-[11px] font-black uppercase tracking-[0.4em] mb-8">Follow Us</h4>
+                <p class="text-gray-500 text-[10px] font-bold mb-6 uppercase tracking-widest">Stay connected for updates and offers!</p>
                 <div class="flex space-x-6 text-gray-500">
-                    <a href="https://www.linkedin.com/in/jawad-ahmad-62251b388/" target="_blank" class="hover:text-yellow-600"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                    <a href="https://www.linkedin.com/in/jawad-ahmad-62251b388/" target="_blank" class="hover:text-yellow-600 transition-all"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
                 </div>
             </div>
             <div>
-                <h4 class="text-[10px] font-black uppercase tracking-[0.4em] mb-6">Subscribe</h4>
-                <div class="relative">
-                    <input type="text" placeholder="Your Email" class="w-full bg-white/5 border border-white/10 py-3 px-4 rounded-lg text-[10px] outline-none focus:border-yellow-600">
-                    <button class="absolute right-3 top-3 text-yellow-600"><i class="fa-solid fa-arrow-right"></i></button>
+                <h4 class="text-[11px] font-black uppercase tracking-[0.4em] mb-8">Subscribe</h4>
+                <div class="relative group">
+                    <input type="text" placeholder="Your Email" class="w-full bg-white/5 border border-white/10 py-4 px-5 rounded-xl text-[10px] outline-none focus:border-yellow-600 transition-all">
+                    <button class="absolute right-4 top-1/2 -translate-y-1/2 text-yellow-600 hover:text-white transition-colors">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="pt-8 border-t border-white/5 text-center px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        
+        <div class="max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
             <p class="text-[9px] font-bold text-gray-600 uppercase tracking-[0.3em]">© 2026 JAWAD DIGITAL HUB. ALL RIGHTS RESERVED.</p>
             <p class="text-[9px] font-bold text-gray-600 uppercase tracking-[0.3em]">CONTACT INFORMATION</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/923117558876" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center">
+    <a href="https://wa.me/923117558876" target="_blank" class="fixed bottom-10 right-10 z-50 bg-[#25D366] p-5 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300">
         <i class="fa-brands fa-whatsapp text-3xl text-white"></i>
     </a>
 
