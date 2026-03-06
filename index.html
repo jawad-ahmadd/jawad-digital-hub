@@ -574,8 +574,9 @@
             document.body.style.overflow = 'auto';
         }
 // --- JAWADHUB VOICE AI ENGINE ---
-const AI_KEY = "AIzaSyAW1_Vl7en1EToZPNNmwY0XbwWTg30sZdc";
+const AI_KEY = "AIzaSyAW1_Vl7en1EToZPNNmwY0XbwWTg30sZdc"; // Restricted Key
 const AI_CONTEXT = "You are the Voice & Text Assistant for JAWADHUB. Lead Engineer: Jawad. Plans: Starter ($999), Pro ($1999), Enterprise. All have Lifetime Free Hosting. Keep answers professional and short.";
+
 const aiOpen = document.getElementById('ai-open-btn');
 const aiClose = document.getElementById('ai-close-btn');
 const aiWindow = document.getElementById('ai-window');
@@ -588,14 +589,22 @@ const aiMessages = document.getElementById('ai-messages-box');
 const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 if (Recognition) {
     const rec = new Recognition();
-    aiMic.onclick = () => { rec.start(); aiMic.classList.add('bg-red-600', 'animate-pulse'); };
-    rec.onresult = (e) => { aiInput.value = e.results[0][0].transcript; aiMic.classList.remove('bg-red-600', 'animate-pulse'); aiSend.click(); };
+    aiMic.onclick = () => { 
+        rec.start(); 
+        aiMic.classList.add('bg-red-600', 'animate-pulse'); 
+    };
+    rec.onresult = (e) => { 
+        aiInput.value = e.results[0][0].transcript; 
+        aiMic.classList.remove('bg-red-600', 'animate-pulse'); 
+        aiSend.click(); 
+    };
 }
 
 // 2. Voice Out (AI Speaking)
 function speakReply(text) {
     const speech = new SpeechSynthesisUtterance(text);
-    speech.rate = 1; speech.pitch = 1;
+    speech.rate = 1; 
+    speech.pitch = 1;
     window.speechSynthesis.speak(speech);
 }
 
@@ -606,8 +615,10 @@ aiClose.onclick = () => aiWindow.classList.add('hidden');
 aiSend.onclick = async () => {
     const val = aiInput.value.trim();
     if (!val) return;
+
     aiMessages.innerHTML += `<div class="text-right"><span class="bg-yellow-600/10 text-yellow-500 p-3 rounded-2xl border border-yellow-600/10 inline-block text-[11px]">${val}</span></div>`;
     aiInput.value = "";
+    
     const loader = document.createElement('div');
     loader.innerHTML = `<span class="text-gray-600 italic animate-pulse text-[10px]">Processing...</span>`;
     aiMessages.appendChild(loader);
@@ -619,14 +630,26 @@ aiSend.onclick = async () => {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ contents: [{ parts: [{ text: AI_CONTEXT + "\nUser: " + val }] }] })
         });
+
         const data = await res.json();
+
+        if (data.error) {
+            console.error("Google API Error:", data.error.message);
+            throw new Error(data.error.message);
+        }
+
         const reply = data.candidates[0].content.parts[0].text;
         loader.remove();
         aiMessages.innerHTML += `<div><span class="bg-white/5 border border-white/10 p-3 rounded-2xl inline-block text-gray-300 text-[11px]">${reply}</span></div>`;
-        speakReply(reply); // AI will speak
-    } catch (e) { loader.innerHTML = `<span class="text-red-900 text-[9px]">Check Connection.</span>`; }
+        speakReply(reply); 
+
+    } catch (e) { 
+        console.error("Connection Issue:", e);
+        loader.innerHTML = `<span class="text-red-900 text-[9px]">Check Connection or API Restrictions.</span>`; 
+    }
     aiMessages.scrollTop = aiMessages.scrollHeight;
 };
+
 aiInput.onkeypress = (e) => { if(e.key === 'Enter') aiSend.click(); };
     </script>
 </body>
