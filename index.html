@@ -882,6 +882,55 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
+        <div id="live-proof" class="fixed bottom-24 left-6 z-[100] transform translate-y-20 opacity-0 transition-all duration-700">
+    <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-4 rounded-2xl flex items-center gap-4 shadow-2xl">
+        <div class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </div>
+        
+        <div class="flex flex-col">
+            <p id="proof-text" class="text-white text-xs font-bold tracking-tight">
+                <span id="proof-number" class="text-yellow-500">14</span> people viewing this agency
+            </p>
+            <p class="text-[10px] text-gray-400 uppercase tracking-widest font-black">Live Now</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const proofDiv = document.getElementById('live-proof');
+    const proofNumber = document.getElementById('proof-number');
+    const proofText = document.getElementById('proof-text');
+
+    // Messages change hotay rahen gay
+    const notifications = [
+        "people viewing this agency",
+        "browsing our portfolio",
+        "inquiring about Professional Plan",
+        "viewing UI/UX services"
+    ];
+
+    function showNotification() {
+        // Random number between 85 and 140
+        const randNum = Math.floor(Math.random() * (140 - 85 + 1)) + 85;
+        const randMsg = notifications[Math.floor(Math.random() * notifications.length)];
+        
+        proofNumber.innerText = randNum;
+        proofText.innerHTML = `<span class="text-yellow-500">${randNum}</span> ${randMsg}`;
+
+        // Show
+        proofDiv.classList.remove('translate-y-20', 'opacity-0');
+        
+        // Hide after 6 seconds
+        setTimeout(() => {
+            proofDiv.classList.add('translate-y-20', 'opacity-0');
+        }, 6000);
+    }
+
+    // Har 12 second baad chalay ga
+    setTimeout(showNotification, 3000); // Pehla 3 sec baad
+    setInterval(showNotification, 12000); 
 </script>
 </body>
 </html>
