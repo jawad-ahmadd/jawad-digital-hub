@@ -373,8 +373,8 @@
     </div>
 </section>
 
-<div id="projectModal" class="fixed inset-0 z-[300] hidden items-center justify-center px-4">
-    <div class="absolute inset-0 bg-black/98 backdrop-blur-2xl" onclick="closeProject()"></div>
+<div id="projectModal" class="fixed inset-0 z-[500] hidden items-center justify-center px-4" style="display: none;">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-md" onclick="closeProject()"></div>
     <div class="relative bg-[#050505] border border-white/5 w-full max-w-5xl max-h-[85vh] overflow-y-auto rounded-[50px] p-8 md:p-20 shadow-2xl">
         <button onclick="closeProject()" class="absolute top-10 right-10 text-yellow-600 text-5xl font-light hover:text-white transition-colors">&times;</button>
         <div id="modalContent"></div>
@@ -680,13 +680,17 @@
         }
 
         function renderModal(content) {
+            const modal = document.getElementById('projectModal');
             document.getElementById('modalContent').innerHTML = content;
-            document.getElementById('projectModal').classList.remove('hidden');
+            modal.classList.remove('hidden');
+            modal.style.display = 'flex'; // Ye line desktop fix karegi
             document.body.style.overflow = 'hidden';
         }
 
         function closeProject() {
-            document.getElementById('projectModal').classList.add('hidden');
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            modal.style.display = 'none'; // Ye line desktop fix karegi
             document.body.style.overflow = 'auto';
         }
 
