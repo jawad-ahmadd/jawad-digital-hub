@@ -159,17 +159,22 @@ const blogData = {
 
 // 3. Render the Content
 if (blogId && blogData[blogId]) {
-    const data = blogData[blogId];
-    document.getElementById('page-title').innerText = data.title + " | Jawad Hub";
-    document.getElementById('category-name').innerText = data.category;
-    document.getElementById('blog-title').innerText = data.title;
-    document.getElementById('blog-image').src = data.image;
-    document.getElementById('blog-content').innerHTML = data.content;
-} else {
-    // If no ID found, go back to blog list
-    // window.location.href = 'blog.html';
-},
-    'shopify-conversion': {
+    const blogData = {
+        'ai-agents': {
+            title: "How to Build a Custom AI Agent in 2026",
+            category: "AI & Automation",
+            image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+            content: `
+                <p class="font-bold text-yellow-500 text-xl italic mb-8">In 2026, AI is no longer just a chatbot; it's an autonomous worker. If you aren't building custom agents, you're leaving 40% efficiency on the table.</p>
+                <p>The transition from generative AI to <strong>Agentic AI</strong> has officially redefined the digital landscape. A custom AI agent isn't just "smart"—it's integrated, decisive, and capable of executing complex workflows without human intervention.</p>
+                <h2>1. The Evolution: Chatbots vs. Autonomous Agents</h2>
+                <p>Unlike the LLMs of 2023, modern agents possess three critical layers: Perception, Reasoning, and Action.</p>
+                <h2>2. Architecture: Defining the "Brain"</h2>
+                <p>In 2026, the industry standard has shifted toward specialized smaller models (SLMs) rather than massive generalist ones.</p>
+            `
+        }, // <--- Pehle article ka comma yahan hai
+
+        'shopify-conversion': {
             title: "7 Shopify Conversion Killers to Fix Now",
             category: "E-commerce Optimization",
             image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
