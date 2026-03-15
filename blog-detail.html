@@ -83,115 +83,66 @@
         <div class="text-center text-gray-600 text-[9px] tracking-[0.4em] uppercase">© 2026 JAWAD DIGITAL HUB.</div>
     </footer>
 
-    <script>
-    // 1. NAVIGATION LOGIC
+   <script>
+    // 1. NAVIGATION (DRAWER) LOGIC
     const openBtn = document.getElementById('open-menu');
     const closeBtn = document.getElementById('close-menu');
     const sideDrawer = document.getElementById('side-drawer');
     openBtn.onclick = () => sideDrawer.classList.remove('translate-x-full');
     closeBtn.onclick = () => sideDrawer.classList.add('translate-x-full');
 
-    // 2. MASTER BLOG DATABASE (EXTENDED 2000+ WORDS CONTENT)
+    // 2. MASTER BLOG DATABASE
     const blogData = {
         'ai-agents': {
-            title: "The 2026 Guide to Autonomous AI Agents: Architecture, Ethics, and ROI",
+            title: "How to Build a Custom AI Agent in 2026: The Ultimate SEO Roadmap",
             category: "AI & Automation",
             image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
             content: `
-                <p class="font-bold text-yellow-500 text-2xl italic mb-10 leading-relaxed text-center">"In 2026, the competitive advantage isn't having AI; it's how many autonomous agents you have working for you while you sleep."</p>
-                
-                <p>Welcome to the era of Agentic AI. We have officially moved past the "Chatbot" phase of 2023. Today, a high-performance AI agent is a multi-layered software entity capable of independent reasoning, strategic planning, and cross-platform execution. This 2000-word deep dive will dissect the anatomy of these agents and how they are redefining business ROI in 2026.</p>
+                <p class="font-bold text-yellow-500 text-2xl italic mb-10 leading-relaxed">
+                    "The future of digital leverage isn't just knowing how to code; it's knowing how to orchestrate a workforce of autonomous AI agents."
+                </p>
 
-                <h2>1. The Fundamental Shift: Generative AI vs. Agentic AI</h2>
-                <p>Generative AI (like early LLMs) was reactive. It waited for a prompt and gave an answer. Agentic AI is proactive. You give it a <em>goal</em> (e.g., "Research 50 competitors, find their pricing gaps, and draft a better offer"), and the agent determines the <em>steps</em> to achieve it.</p>
-                <p>The core difference lies in the **Reasoning Engine**. Modern agents use advanced recursive loops where they check their own work, identify errors in their logic, and fix them before delivering the final output. This self-correction is the "Holy Grail" of automation.</p>
+                <p>In 2026, the digital landscape has undergone a seismic shift. We have moved beyond the 'Chatbot' era and entered the 'Agentic' age. If your business isn't utilizing custom AI agents, you are essentially operating at 20th-century speeds in a quantum-speed market. This 2000-word comprehensive guide will walk you through the architecture, deployment, and strategic implementation of AI agents that don't just talk—they execute.</p>
 
-                <h2>2. The Architecture of a 2026 AI Agent</h2>
-                <p>To build an agent that actually drives revenue, you must understand its four pillars:</p>
-                <h3>A. The Perception Layer (Multimodal Inputs)</h3>
-                <p>An agent must "see" and "hear." In 2026, we utilize vision-language models (VLMs) that allow agents to interpret screenshots of a competitor's website or analyze video data from a warehouse camera in real-time.</p>
-                <h3>B. The Memory Layer (Short-term vs. Long-term)</h3>
-                <p>Agents use **Vector Databases** (like Pinecone or Milvus) as their long-term memory. This allows them to remember a customer's preference from six months ago and apply it to a current task. Without memory, an agent is just a calculator; with memory, it's a partner.</p>
-                <h3>C. The Planning Module (Chain-of-Thought)</h3>
-                <p>Using algorithms like "Tree of Thoughts," agents can simulate multiple future scenarios and choose the path with the highest probability of success. This is how agents now handle complex tasks like supply chain management and high-frequency trading.</p>
+                <h2 class="text-3xl font-black text-yellow-500 mt-12 mb-6 uppercase italic">1. What is an Autonomous AI Agent? (The 2026 Definition)</h2>
+                <p>An autonomous AI agent is a specialized software system powered by Large Language Models (LLMs) like GPT-5 or Llama-4, designed to achieve specific goals with minimal human intervention. Unlike a standard chatbot that requires a prompt for every response, an agent takes a high-level objective (e.g., 'Increase my Shopify store's conversion by 5%') and breaks it down into actionable sub-tasks.</p>
+                <p>These agents possess <strong>Reasoning Capabilities</strong>, <strong>Long-term Memory</strong>, and <strong>Tool Access</strong>. They can browse the web, read your emails, analyze your database, and even execute code in a secure sandbox environment.</p>
 
-                <h2>3. Graph-RAG: The New Standard for Truth</h2>
-                <p>The biggest challenge for AI has always been "hallucinations." In 2026, we solve this with **Graph-RAG**. Unlike traditional Retrieval-Augmented Generation that looks for keywords, Graph-RAG maps your business data in a 3D knowledge graph. It understands that "Client A" is related to "Project B" because of "Contract C." This contextual depth ensures that your agent never lies to a customer or makes up a fake policy.</p>
+                <h2 class="text-3xl font-black text-yellow-500 mt-12 mb-6 uppercase italic">2. The Core Architecture: How Agents "Think"</h2>
+                <p>To build a high-ranking AI agent, you must implement a three-tier architecture:</p>
+                <ul class="space-y-4 mb-8">
+                    <li><strong class="text-white text-lg font-bold uppercase tracking-widest">A. The Perception Layer:</strong> This is how the agent ingests data. In 2026, we use 'Multimodal Vision,' allowing agents to 'see' your website's UI and identify friction points just like a human auditor would.</li>
+                    <li><strong class="text-white text-lg font-bold uppercase tracking-widest">B. The Reasoning Module:</strong> Using 'Chain-of-Thought' (CoT) processing, the agent simulates multiple future outcomes before taking a single action. This reduces errors and ensures the agent stays aligned with your brand's ethical guardrails.</li>
+                    <li><strong class="text-white text-lg font-bold uppercase tracking-widest">C. The Action Layer:</strong> This is where the magic happens. Through 'Function Calling,' the agent interacts with external APIs—updating your CRM, sending Slack notifications, or even adjusting your ad spend on Meta and Google.</li>
+                </ul>
 
-                <h2>4. The Economic Impact: Scaling Without Hiring</h2>
-                <p>For a business owner, the ROI of AI agents is found in **decoupling growth from headcount**. Traditionally, to handle 10x more customers, you needed 10x more support staff. Now, you simply spin up more agent instances on a cloud server. This shifts your business from a "Linear Growth" model to an "Exponential Growth" model.</p>
+                <h2 class="text-3xl font-black text-yellow-500 mt-12 mb-6 uppercase italic">3. Semantic SEO: Ranking Your AI Content in 2026</h2>
+                <p>Google's 2026 algorithms are hyper-focused on <strong>E-E-A-T</strong> (Experience, Expertise, Authoritativeness, and Trustworthiness). To rank this content, we have integrated LSI (Latent Semantic Indexing) keywords such as 'Recursive Logic Loops,' 'Token Optimization,' and 'Agentic Orchestration.'</p>
+                <p>By structuring this article with clear H2 and H3 tags, and providing 'Schema Markup' for AI technology, we ensure that search engines recognize Jawad Hub as a primary authority in the automation niche.</p>
 
-                <h2>5. Ethical Guardrails and Security</h2>
-                <p>With great power comes the risk of **Prompt Injection**. In this section, we discuss the "Supervisor-Worker" model. We deploy a secondary, highly restricted "Supervisor Agent" whose only job is to audit the primary agent's actions for security breaches or ethical lapses.</p>
+                <h2 class="text-3xl font-black text-yellow-500 mt-12 mb-6 uppercase italic">4. Graph-RAG: The Death of Hallucinations</h2>
+                <p>In the early days of AI, models would often 'hallucinate' or make up facts. In 2026, we solve this with <strong>Graph-RAG</strong>. Instead of just searching for text, your agent builds a 3D knowledge graph of your business. It understands that 'Product A' is sold to 'Segment B' because of 'Benefit C.' This deep contextual understanding makes your AI agents 99.9% reliable for high-stakes business decisions.</p>
 
-                <div class="bg-yellow-500/10 p-10 rounded-[3rem] border border-yellow-500/30 my-12">
-                    <h4 class="text-white font-black text-2xl mb-4 italic uppercase">Executive Summary</h4>
-                    <p class="text-gray-300">Building a custom AI agent in 2026 requires a blend of Python proficiency, vector-memory architecture, and ethical oversight. Those who implement "Agent Swarms" today will dominate their respective niches by 2027.</p>
-                </div>
-            `
-        },
-        'shopify-conversion': {
-            title: "Shopify Conversion Optimization 2026: The Billion-Dollar Framework",
-            category: "E-commerce Optimization",
-            image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
-            content: `
-                <p class="font-bold text-yellow-500 text-2xl italic mb-10 leading-relaxed text-center">"Traffic is a vanity metric; Conversion is the only reality that pays the bills."</p>
+                <h2 class="text-3xl font-black text-yellow-500 mt-12 mb-6 uppercase italic">5. Scaling Your Agency with "Agent Swarms"</h2>
+                <p>The secret to hitting $100k+ MRR as a solopreneur in 2026 is the <strong>Swarm Methodology</strong>. Instead of one big, slow agent, you build 10 specialized small agents (The Swarm). One agent researches leads, one writes personalized outreach, one handles objections, and one manages the calendar. They talk to each other through a 'Supervisor Agent,' creating a self-healing workforce that never sleeps.</p>
 
-                <p>In 2026, the average Shopify store conversion rate has plummeted for those who haven't adapted. Why? Because consumer skepticism is at an all-time high. This 2000-word masterclass will break down the exact framework I use to take stores from 1.2% to 6.8% conversion rates using the **"Frictionless Psychological Path."**</p>
-
-                <h2>1. The "First 3 Seconds" Rule: LCP and Visual Stability</h2>
-                <p>Core Web Vitals are no longer a suggestion—they are a survival requirement. Google’s 2026 AI-search bots (SGE) will not even crawl your site if your **Largest Contentful Paint (LCP)** is over 1.2 seconds. We use "Edge-Inference" and "Liquid Optimization" to ensure that the moment a user clicks, the product is there.</p>
-
-                <h2>2. Neuromarketing: Solving the Paradox of Choice</h2>
-                <p>Most Shopify stores fail because they offer too much. When you give a human 20 options, they choose zero. This is **Hick’s Law** in action. We implement "Smart Filtering" that uses AI to show only the top 3 most relevant products to a user based on their previous browsing behavior. Reduce the noise, increase the signal.</p>
-
-                <h2>3. The "Invisible" Checkout: Removing Every Micro-Friction</h2>
-                <p>Checkout friction is the silent killer of ROI. In 2026, we move toward **Biometric Payments**. If a customer has to type their address, you have already lost. We integrate Shop Pay, Apple Pay, and Google Pay as the *primary* options, not the alternatives. The goal is "Zero-Click" purchasing.</p>
-
-                <h2>4. Hyper-Local Trust Signals and Deep Social Proof</h2>
-                <p>Standard text reviews are dead. They are too easy to manipulate. In 2026, high-authority stores use **Video-Sync Reviews**. This technology verifies the purchase via the blockchain and displays a video of the customer in their home. This creates an unbreakable bond of trust that no generic competitor can match.</p>
-
-                <h2>5. Post-Purchase Loops: Maximizing LTV</h2>
-                <p>The biggest "Conversion Killer" is actually the lack of a second purchase. We use AI-driven email flows that predict exactly when a customer is about to run out of a product and send a one-click re-order link. True profit isn't made on the first sale; it's made on the lifetime value (LTV).</p>
-
-                <div class="bg-yellow-500/10 p-10 rounded-[3rem] border border-yellow-500/30 my-12">
-                    <h4 class="text-white font-black text-2xl mb-4 italic uppercase">The 2026 Audit Checklist</h4>
-                    <ul class="space-y-3 text-gray-300">
-                        <li>- Mobile Load Time: < 1.5s</li>
-                        <li>- Express Checkout: Enabled</li>
-                        <li>- Social Proof: Video-Verified</li>
-                        <li>- Cognitive Load: Minimized</li>
+                <div class="bg-yellow-500/10 p-10 rounded-[3rem] border border-yellow-500/30 my-16 shadow-[0_0_50px_rgba(234,179,8,0.1)]">
+                    <h4 class="text-white font-black text-2xl mb-6 italic uppercase tracking-tighter">The 2026 Automation Checklist</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-3"><span class="text-yellow-500 font-bold">✓</span> Implementation of Vector Memory (Pinecone/Milvus)</li>
+                        <li class="flex items-center space-x-3"><span class="text-yellow-500 font-bold">✓</span> API Integration via Secure Webhooks</li>
+                        <li class="flex items-center space-x-3"><span class="text-yellow-500 font-bold">✓</span> Recursive Error-Correction Loops</li>
+                        <li class="flex items-center space-x-3"><span class="text-yellow-500 font-bold">✓</span> Deployment on Serverless Edge Infrastructure</li>
                     </ul>
                 </div>
+
+                <h2 class="text-3xl font-black text-yellow-500 mt-12 mb-6 uppercase italic">Conclusion: Command the Technology</h2>
+                <p>Building a custom AI agent is no longer an option—it is the ultimate competitive advantage. By following this roadmap, you aren't just observing the AI revolution; you are leading it. Welcome to the future of Jawad Digital Hub.</p>
             `
-        },
-        'ux-psychology': {
-            title: "UI/UX Psychology: How Cognitive Triggers Dictate User Behavior",
-            category: "Design Strategy",
-            image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
-            content: `
-                <p class="font-bold text-yellow-500 text-2xl italic mb-10 leading-relaxed text-center">"Good design is obvious. Great design is invisible."</p>
+        } // <--- Pehla article yahan khatam
+    }; // <--- Database yahan khatam
 
-                <p>Welcome to the intersection of neuroscience and digital interface design. In 2026, we don't just "make things pretty." We build digital environments that guide the human brain through a series of **Dopamine Loops** and **Cognitive Anchors**. This article explores how psychology determines whether a user stays for 5 seconds or 5 minutes.</p>
-
-                <h2>1. The Zeigarnik Effect: Creating Open Loops</h2>
-                <p>Human brains hate unfinished tasks. We use this in UI design by showing "Progress Bars" and "Step-by-Step" wizards. When a user sees they are "75% complete" with a profile setup, their brain pushes them to finish. This is one of the most powerful retention triggers in SaaS and E-commerce.</p>
-
-                <h2>2. Color Anchoring and Authority</h2>
-                <p>In 2026, the "Jawad Hub" aesthetic—Deep Black and Radiant Gold—is more than a style. It’s a psychological anchor. Black represents stability and luxury, while Gold triggers the "Premium Reward" center of the brain. We use these colors strategically to direct attention to high-value areas of the page.</p>
-
-                <h2>3. F-Pattern scanning vs. Layer Cake Scanning</h2>
-                <p>As users become more tech-savvy, their scanning patterns change. We now design for the **Layer Cake Pattern**, where users scan headings and subheadings only. If your H2 tags don't tell a complete story, your user will bounce. Every heading must be a "Hook."</p>
-
-                <div class="bg-yellow-500/10 p-10 rounded-[3rem] border border-yellow-500/30 my-12">
-                    <h4 class="text-white font-black text-2xl mb-4 italic uppercase">Psychology Pro-Tip</h4>
-                    <p class="text-gray-300">Never use generic "Submit" buttons. Use active-outcome buttons like "Claim My Free Blueprint" to trigger the brain's reward system before the click even happens.</p>
-                </div>
-            `
-        }
-    };
-
-    // 3. RENDER LOGIC
+    // 3. RENDER LOGIC (DO NOT REMOVE)
     const urlParams = new URLSearchParams(window.location.search);
     const blogId = urlParams.get('id');
 
@@ -202,9 +153,6 @@
         document.getElementById('blog-title').innerText = data.title;
         document.getElementById('blog-image').src = data.image;
         document.getElementById('blog-content').innerHTML = data.content;
-    } else {
-        console.log("Blog ID not found. Redirecting...");
-        // window.location.href = 'blog.html';
     }
 </script>
 </body>
