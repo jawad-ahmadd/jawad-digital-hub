@@ -84,141 +84,69 @@
     </footer>
 
     <script>
-        // FAST NAV LOGIC
-        const openBtn = document.getElementById('open-menu');
-        const closeBtn = document.getElementById('close-menu');
-        const sideDrawer = document.getElementById('side-drawer');
-        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+    // 1. FAST NAV LOGIC
+    const openBtn = document.getElementById('open-menu');
+    const closeBtn = document.getElementById('close-menu');
+    const sideDrawer = document.getElementById('side-drawer');
 
-        openBtn.onclick = () => {
-            sideDrawer.style.transition = "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)";
-            sideDrawer.classList.remove('translate-x-full');
-        };
+    openBtn.onclick = () => sideDrawer.classList.remove('translate-x-full');
+    closeBtn.onclick = () => sideDrawer.classList.add('translate-x-full');
 
-        closeBtn.onclick = () => sideDrawer.classList.add('translate-x-full');
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                sideDrawer.style.transition = "none";
-                sideDrawer.classList.add('translate-x-full');
-            });
-        });
-
-        // 1. Get the Blog ID from URL (e.g., blog-detail.html?id=ai-agents)
-const urlParams = new URLSearchParams(window.location.search);
-const blogId = urlParams.get('id');
-
-// 2. The Content Database (Article #1)
-const blogData = {
-    'ai-agents': {
-        title: "How to Build a Custom AI Agent in 2026",
-        category: "AI & Automation",
-        image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
-        content: `
-            <p class="font-bold text-yellow-500 text-xl italic mb-8">In 2026, AI is no longer just a chatbot; it's an autonomous worker. If you aren't building custom agents, you're leaving 40% efficiency on the table.</p>
-            
-            <p>The transition from generative AI to <strong>Agentic AI</strong> has officially redefined the digital landscape. A custom AI agent isn't just "smart"—it's integrated, decisive, and capable of executing complex workflows without human intervention. In this comprehensive guide, we'll break down the architecture of a high-performance 2026 AI agent.</p>
-
-            <h2>1. The Evolution: Chatbots vs. Autonomous Agents</h2>
-            <p>Before we dive into the "how," we must understand the "what." Unlike the LLMs of 2023, modern agents possess three critical layers:</p>
-            <ul>
-                <li><strong>Perception Layer:</strong> How the agent "sees" data (APIs, Webhooks, Real-time vision).</li>
-                <li><strong>Reasoning Layer:</strong> Using Chain-of-Thought (CoT) processing to break down tasks.</li>
-                <li><strong>Action Layer:</strong> The ability to execute code, buy assets, or update a Shopify backend.</li>
-            </ul>
-
-            <h2>2. Architecture: Defining the "Brain"</h2>
-            <p>To build a robust agent, you need a foundation. In 2026, the industry standard has shifted toward specialized smaller models (SLMs) rather than massive generalist ones. This reduces latency and operational costs.</p>
-            <h3>Choosing Your Engine</h3>
-            <p>Depending on your goal, you might choose GPT-5 Turbo for complex logic or a fine-tuned Llama-4 for data privacy. The key is "Function Calling"—ensuring your model can interact with external tools smoothly.</p>
-
-            <h2>3. The Development Workflow (Step-by-Step)</h2>
-            <h3>Step A: Environment Setup</h3>
-            <p>Utilize Python 3.12+ or Node.js 24 environments. You'll need frameworks like LangGraph or CrewAI to manage multi-agent orchestration. A single agent is good, but a <strong>swarm of agents</strong> (The Hive Mind) is unstoppable.</p>
-            
-            <h3>Step B: Knowledge Retrieval (RAG 2.0)</h3>
-            <p>Standard RAG is dead. In 2026, we use <strong>Graph-RAG</strong>. It connects data points like a spiderweb rather than a simple list, allowing your agent to understand context and relationships in your business data.</p>
-
-            <h2>4. Security and Ethical Guardrails</h2>
-            <p>With great power comes great liability. A custom agent that can access your bank account or customer database must have "Prompt Injection Protection." We implement a dual-layer validation system where a "Supervisor Agent" audits every action taken by the "Worker Agent."</p>
-
-            <h2>5. Deployment and Scaling</h2>
-            <p>Deploying via Docker containers on AWS or Vercel Edge functions ensures your agent is always live. Monitoring tools now use AI themselves to alert you if your agent starts hallucinating or its "logic loop" breaks.</p>
-
-            <h2>Summary: The Competitive Edge</h2>
-            <p>Building a custom AI agent is the ultimate leverage. It allows a solopreneur to function like a 10-person agency. By following this roadmap, you are not just keeping up with technology; you are commanding it.</p>
-
-            <div class="bg-yellow-500/10 p-8 rounded-3xl border border-yellow-500/20 mt-12">
-                <h4 class="text-white font-black uppercase text-lg mb-4 italic">Quick FAQ</h4>
-                <p class="text-sm"><strong>Q: How long does it take to build?</strong><br>A: A basic MVP takes 48 hours; a fully integrated enterprise agent takes 4-6 weeks.</p>
-                <p class="text-sm"><strong>Q: Do I need a GPU?</strong><br>A: No, in 2026, cloud-based serverless inference handles everything.</p>
-            </div>
-        `
-    }
-};
-
-// 3. Render the Content
-if (blogId && blogData[blogId]) {
+    // 2. THE CONTENT DATABASE (Dono Articles Yahan Hain)
     const blogData = {
         'ai-agents': {
             title: "How to Build a Custom AI Agent in 2026",
             category: "AI & Automation",
             image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
             content: `
-                <p class="font-bold text-yellow-500 text-xl italic mb-8">In 2026, AI is no longer just a chatbot; it's an autonomous worker. If you aren't building custom agents, you're leaving 40% efficiency on the table.</p>
-                <p>The transition from generative AI to <strong>Agentic AI</strong> has officially redefined the digital landscape. A custom AI agent isn't just "smart"—it's integrated, decisive, and capable of executing complex workflows without human intervention.</p>
+                <p class="font-bold text-yellow-500 text-xl italic mb-8">In 2026, AI is no longer just a chatbot; it's an autonomous worker.</p>
+                <p>The transition from generative AI to <strong>Agentic AI</strong> has officially redefined the digital landscape. A custom AI agent isn't just "smart"—it's integrated, decisive, and capable of executing complex workflows.</p>
                 <h2>1. The Evolution: Chatbots vs. Autonomous Agents</h2>
                 <p>Unlike the LLMs of 2023, modern agents possess three critical layers: Perception, Reasoning, and Action.</p>
                 <h2>2. Architecture: Defining the "Brain"</h2>
                 <p>In 2026, the industry standard has shifted toward specialized smaller models (SLMs) rather than massive generalist ones.</p>
+                <h2>Summary: The Competitive Edge</h2>
+                <p>Building a custom AI agent is the ultimate leverage. It allows a solopreneur to function like a 10-person agency.</p>
             `
-        }, // <--- Pehle article ka comma yahan hai
-
+        },
         'shopify-conversion': {
             title: "7 Shopify Conversion Killers to Fix Now",
             category: "E-commerce Optimization",
             image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg",
             content: `
-                <p class="font-bold text-yellow-500 text-xl italic mb-8">In the 2026 digital economy, a 2% conversion rate is no longer a success—it is a failure. If your Shopify store isn't hitting 5%+, your funnel is leaking revenue.</p>
-                
-                <p>The global e-commerce landscape has evolved. Modern consumers are hyper-aware and possess a shorter attention span than ever before. After auditing 150+ high-ticket Shopify stores, I’ve identified the <strong>7 critical conversion killers</strong> that are silently sabotaging your ROI.</p>
-
+                <p class="font-bold text-yellow-500 text-xl italic mb-8">In the 2026 digital economy, a 2% conversion rate is failure. If you aren't hitting 5%+, your funnel is leaking.</p>
+                <p>After auditing 150+ high-ticket Shopify stores, I’ve identified the 7 critical killers sabotaging your ROI.</p>
                 <h2>1. Decision Fatigue (The Paradox of Choice)</h2>
-                <p>Overwhelming your visitors with too many options is the fastest way to lose a sale. If your homepage features dozens of uncurated products, you trigger <strong>Analysis Paralysis</strong>. In 2026, the elite strategy is Hyper-Curated Collections. Guide your customer to the solution, don't make them hunt for it.</p>
-
+                <p>Overwhelming visitors with too many options is the fastest way to lose a sale. In 2026, the elite strategy is Hyper-Curated Collections.</p>
                 <h2>2. 3-Second Latency (The Silent Bounce)</h2>
-                <p>Google’s latest Core Web Vitals prioritize "Instant-On" performance. Every 100ms delay in your mobile load time results in a 7% drop in conversions. If your theme is bloated with unused apps or heavy 4K images, you are essentially paying for ads just to show people a loading screen.</p>
-
-                <h2>3. Hidden "Surprise" Costs at Checkout</h2>
-                <p>Hidden shipping fees or taxes at the final step are the #1 reason for cart abandonment. It breaks the psychological bond of trust. 
-                <strong>The Fix:</strong> Incorporate all costs into the product price and market "FREE WORLDWIDE SHIPPING" as a premium benefit. Psychologically, consumers value "Free Shipping" more than a discount.</p>
-
-                <h2>4. Low-Fidelity Social Proof</h2>
-                <p>Generic, static reviews are easily faked. 2026 consumers demand <strong>Authentic Validation</strong>. Use high-definition video testimonials and verified-purchase badges that link to real social profiles to build unbreakable credibility.</p>
-
-                <h2>5. High-Friction Mobile Checkout</h2>
-                <p>Over 85% of traffic is mobile. Forcing users to create an account or fill out extensive form fields is a profit-killer. Implement <strong>One-Click Express Checkout</strong> (Shop Pay, Apple Pay, Google Pay). The goal is to make the purchase as seamless as a thumb-tap.</p>
-
-                <h2>6. Lack of Post-Purchase Reassurance</h2>
-                <p>The sale doesn't end at the "Thank You" page. If the customer doesn't immediately receive a tracking roadmap or a brand-story sequence, <strong>Buyer's Remorse</strong> sets in, leading to higher refund rates and chargebacks.</p>
-
-                <h2>7. Feature-Focused Copywriting</h2>
-                <p>Stop listing technical specs. Start selling <strong>Aspirational Outcomes</strong>. A customer doesn't buy a 5000mAh battery; they buy "Peace of mind for a 3-day journey." Use AI-driven storytelling to make your product feel like a necessity, not a luxury.</p>
-
+                <p>Every 100ms delay in your mobile load time results in a 7% drop in conversions. Optimize your liquid code.</p>
+                <h2>3. One-Click Express Checkout</h2>
+                <p>Friction is the enemy of profit. Implement Shop Pay, Apple Pay, and Google Pay to make the purchase seamless.</p>
                 <div class="bg-yellow-500/10 p-8 rounded-3xl border border-yellow-500/20 mt-12">
                     <h4 class="text-white font-black uppercase text-lg mb-4 italic">The 2026 ROI Checklist</h4>
                     <ul class="text-sm space-y-2">
-                        <li><span class="text-yellow-500 font-bold">✔</span> Is your mobile LCP (Largest Contentful Paint) under 1.5 seconds?</li>
-                        <li><span class="text-yellow-500 font-bold">✔</span> Do you offer at least two "Express Checkout" options?</li>
-                        <li><span class="text-yellow-500 font-bold">✔</span> Is your primary CTA color contrasting the background?</li>
+                        <li><span class="text-yellow-500 font-bold">✔</span> Mobile LCP under 1.5 seconds.</li>
+                        <li><span class="text-yellow-500 font-bold">✔</span> Two or more Express Checkout options.</li>
                     </ul>
                 </div>
-
-                <h2 class="mt-16 italic uppercase">Final Verdict</h2>
-                <p>Conversion optimization is not a "one-time fix"—it is a continuous loop of testing. By addressing these 7 killers, you position your Shopify store as a high-authority brand rather than a generic dropshipping site.</p>
             `
-        } // <--- Last article hai, isliye yahan comma nahi aayega
+        }
     };
-    </script>
+
+    // 3. RENDER LOGIC (Database ke khatam hone ke baad)
+    const urlParams = new URLSearchParams(window.location.search);
+    const blogId = urlParams.get('id');
+
+    if (blogId && blogData[blogId]) {
+        const data = blogData[blogId];
+        document.getElementById('page-title').innerText = data.title + " | Jawad Hub";
+        document.getElementById('category-name').innerText = data.category;
+        document.getElementById('blog-title').innerText = data.title;
+        document.getElementById('blog-image').src = data.image;
+        document.getElementById('blog-content').innerHTML = data.content;
+    } else {
+        console.log("No valid blog ID found.");
+    }
+</script>
 </body>
 </html>
