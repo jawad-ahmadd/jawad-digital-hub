@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Ad Copy Generator | Jawad Digital Hub</title>
+    <title>AI Ad Copy & SEO Hub | Jawad Digital Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +12,9 @@
         .fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
         #side-drawer { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .copy-card { transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.01); }
+        .copy-card:hover { border-color: rgba(234, 179, 8, 0.4); background: rgba(255,255,255,0.03); }
+        .keyword-tag { background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.2); color: #eab308; }
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -24,105 +27,158 @@
             <div class="text-xl font-black tracking-tighter uppercase text-white">JAWAD<span class="text-yellow-500">HUB</span></div>
         </a>
         <div class="hidden md:flex flex-1 justify-center space-x-10 text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400">
-            <a href="index.html" class="hover:text-yellow-500 transition-colors">Home</a>
+            <a href="index.html#home" class="hover:text-yellow-500 transition-colors">Home</a>
+            <a href="index.html#about" class="hover:text-yellow-500 transition-colors">About</a>
+            <a href="index.html#services" class="hover:text-yellow-500 transition-colors">Services</a>
+            <a href="index.html#pricing" class="hover:text-yellow-500 transition-colors">Pricing</a>
+            <a href="index.html#portfolio" class="hover:text-yellow-500 transition-colors">Portfolio</a>
             <a href="blog.html" class="hover:text-yellow-500 transition-colors">Blog</a>
             <a href="contact.html" class="text-yellow-500 hover:text-white transition-colors">Contact Us</a>
         </div>
-        <button id="open-menu" class="md:hidden text-yellow-500 p-1"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16"></path></svg></button>
+        <button id="open-menu" class="md:hidden text-yellow-500 p-1">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 8h16M4 16h16"></path></svg>
+        </button>
     </nav>
 
     <div id="side-drawer" class="fixed inset-0 bg-black z-[110] transform translate-x-full md:hidden flex flex-col">
-        <div class="p-8 flex justify-between items-center border-b border-yellow-600/10 pb-6 mb-12">
+        <div class="p-8 flex justify-between items-center border-b border-yellow-600/10 mb-12">
             <span class="text-white font-black text-2xl tracking-tighter uppercase">JAWAD<span class="text-yellow-500">HUB</span></span>
-            <button id="close-menu" class="text-yellow-500 focus:outline-none p-1">
-                <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
+            <button id="close-menu" class="text-yellow-500"><svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg></button>
         </div>
-        <nav class="flex flex-col items-center space-y-10 text-white text-3xl font-bold uppercase flex-grow px-8">
-            <a href="index.html" class="hover:text-yellow-500">Home</a>
+        <nav class="flex flex-col items-center space-y-10 text-white text-3xl font-bold uppercase tracking-tighter flex-grow px-8 text-center">
+            <a href="index.html#home" class="hover:text-yellow-500">Home</a>
+            <a href="index.html#services" class="hover:text-yellow-500">Services</a>
+            <a href="index.html#portfolio" class="hover:text-yellow-500">Portfolio</a>
             <a href="blog.html" class="hover:text-yellow-500">Blog</a>
-            <a href="contact.html" class="text-yellow-500 italic">Contact</a>
+            <a href="contact.html" class="text-yellow-500 italic font-black">Contact Us</a>
         </nav>
     </div>
 
-    <main class="pt-40 pb-20 px-6 max-w-5xl mx-auto min-h-screen fade-in">
+    <main class="pt-40 pb-20 px-6 max-w-6xl mx-auto min-h-screen fade-in">
         <header class="mb-16 text-center">
-            <h1 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
-                AI Ad <span class="text-yellow-500">Copy</span>
+            <h1 class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter leading-none">
+                SEO & <span class="text-yellow-500">Copy AI.</span>
             </h1>
-            <p class="text-gray-500 mt-4 tracking-widest uppercase text-[10px]">Generate High-Converting Western Ads in Seconds</p>
+            <p class="text-gray-500 mt-6 tracking-[0.4em] uppercase text-[10px]">Rank & Convert in UK/USA Markets</p>
         </header>
 
-        <div class="bg-zinc-900/40 border border-white/5 rounded-[2.5rem] p-8 md:p-12 gold-glow backdrop-blur-sm">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="space-y-8">
+        <div class="bg-zinc-900/40 border border-white/5 rounded-[3rem] p-8 md:p-16 gold-glow backdrop-blur-xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <div class="space-y-10">
                     <div>
-                        <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-2">Product Name / Niche</label>
-                        <input type="text" id="productName" placeholder="e.g. Premium Suede Boots" class="w-full bg-transparent border-b border-white/10 py-3 text-xl font-bold outline-none focus:border-yellow-500 transition-all">
+                        <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500 mb-4">Focus Niche / Product</label>
+                        <input type="text" id="productName" placeholder="e.g. Luxury Jewelry Store" class="w-full bg-transparent border-b-2 border-white/10 py-3 text-2xl font-black outline-none focus:border-yellow-500 transition-all">
                     </div>
-                    <div>
-                        <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-2">Main Benefit</label>
-                        <input type="text" id="benefit" placeholder="e.g. Waterproof & 50% Off" class="w-full bg-transparent border-b border-white/10 py-3 text-xl font-bold outline-none focus:border-yellow-500 transition-all">
+
+                    <div class="space-y-4">
+                        <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-zinc-500">Select Campaign Goal</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button onclick="setTone('luxurious', this)" class="tone-btn py-4 rounded-xl border border-yellow-500 text-yellow-500 text-[9px] font-black uppercase tracking-widest bg-yellow-500/10 transition-all">Elite Luxury</button>
+                            <button onclick="setTone('bold', this)" class="tone-btn py-4 rounded-xl border border-white/5 text-zinc-500 text-[9px] font-black uppercase tracking-widest hover:border-white/20 transition-all">Fast Sales</button>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-[10px] font-black uppercase tracking-[0.2em] text-gray-500 mb-4">Select Ad Tone</label>
-                        <select id="adTone" class="w-full bg-black/50 border border-white/10 rounded-xl p-4 text-sm font-bold text-yellow-500 outline-none">
-                            <option value="luxurious">Luxurious & Elite</option>
-                            <option value="bold">Bold & Urgent</option>
-                            <option value="minimalist">Clean & Minimalist</option>
-                        </select>
-                    </div>
-                    <button onclick="generateCopy()" class="w-full bg-yellow-500 text-black font-black py-5 rounded-2xl uppercase italic tracking-widest hover:scale-[1.02] transition-transform">Generate Ad Copy</button>
+
+                    <button onclick="generateEverything()" class="w-full bg-yellow-500 text-black font-black py-6 rounded-2xl uppercase italic tracking-[0.3em] text-sm hover:scale-[1.02] transition-all">Generate Strategy</button>
                 </div>
 
-                <div class="bg-black/50 border border-white/5 rounded-[2rem] p-8 min-h-[300px] relative overflow-hidden">
-                    <div id="outputContainer" class="hidden">
-                        <span class="text-[9px] font-black uppercase tracking-widest text-yellow-500 block mb-6">Generated Results:</span>
-                        <div id="copyResult" class="text-gray-300 text-lg leading-relaxed italic space-y-6">
-                            </div>
-                        <button onclick="copyToClipboard()" class="mt-8 text-white/40 text-[9px] uppercase font-black hover:text-yellow-500 transition-colors">Click to Copy Result</button>
+                <div id="resultBox" class="space-y-6">
+                    <div id="placeholder" class="h-full flex flex-col items-center justify-center opacity-20 py-20">
+                        <div class="w-16 h-16 border-2 border-dashed border-zinc-500 rounded-full mb-4"></div>
+                        <p class="text-[10px] font-black uppercase tracking-widest">Awaiting Command...</p>
                     </div>
-                    <div id="placeholderText" class="flex items-center justify-center h-full text-zinc-700 text-center font-bold italic uppercase text-sm tracking-widest">
-                        Your optimized copy will appear here...
+
+                    <div id="outputContainer" class="hidden space-y-6 fade-in">
+                        <div class="copy-card p-8 rounded-[2rem]">
+                            <span class="text-[9px] font-black text-yellow-500 uppercase tracking-[0.3em] block mb-4">SEO Ranking Keywords</span>
+                            <div id="keywordList" class="flex flex-wrap gap-2"></div>
+                        </div>
+
+                        <div class="copy-card p-8 rounded-[2rem] space-y-6">
+                            <span class="text-[9px] font-black text-yellow-500 uppercase tracking-[0.3em] block">Optimized Ad Script</span>
+                            <div>
+                                <h3 id="headOutput" class="text-white font-black text-xl italic uppercase mb-2"></h3>
+                                <p id="bodyOutput" class="text-zinc-400 text-sm leading-relaxed"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
 
-    <footer class="bg-black border-t border-white/5 py-12 text-center">
-        <p class="text-[9px] uppercase tracking-[0.4em] text-gray-600 font-bold">© 2026 JAWAD DIGITAL HUB. ALL RIGHTS RESERVED.</p>
+    <footer class="bg-black border-t border-white/5 pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+                <div class="space-y-6">
+                    <div class="text-2xl font-black tracking-tighter uppercase text-white">JAWAD<span class="text-yellow-500">HUB</span></div>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-[250px]">Elevating digital standards through elite design and performance engineering.</p>
+                </div>
+                <div class="space-y-6 text-left">
+                    <h4 class="text-white font-black uppercase text-[10px] tracking-[0.3em]">Support</h4>
+                    <ul class="space-y-4 text-gray-500 text-sm font-medium">
+                        <li><a href="privacy.html" class="hover:text-yellow-500">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-yellow-500">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-white font-black uppercase text-[10px] tracking-[0.3em]">Follow Us</h4>
+                    <div class="w-10 h-10 bg-zinc-900 rounded-xl flex items-center justify-center text-zinc-500">Li</div>
+                </div>
+                <div class="space-y-6">
+                    <h4 class="text-white font-black uppercase text-[10px] tracking-[0.3em]">Subscribe</h4>
+                    <input type="text" placeholder="Your Email" class="bg-transparent border-b border-white/10 pb-2 text-sm outline-none w-full">
+                </div>
+            </div>
+            <p class="text-[9px] uppercase tracking-[0.4em] text-gray-600 font-bold text-center border-t border-white/5 pt-12">© 2026 JAWAD DIGITAL HUB. ALL RIGHTS RESERVED.</p>
+        </div>
     </footer>
 
     <script>
-        // Menu Scripts
-        const openBtn = document.getElementById('open-menu');
-        const closeBtn = document.getElementById('close-menu');
         const sideDrawer = document.getElementById('side-drawer');
-        openBtn.onclick = () => sideDrawer.classList.remove('translate-x-full');
-        closeBtn.onclick = () => sideDrawer.classList.add('translate-x-full');
+        document.getElementById('open-menu').onclick = () => sideDrawer.classList.remove('translate-x-full');
+        document.getElementById('close-menu').onclick = () => sideDrawer.classList.add('translate-x-full');
 
-        function generateCopy() {
-            const product = document.getElementById('productName').value || 'Product';
-            const benefit = document.getElementById('benefit').value || 'Premium Quality';
-            const tone = document.getElementById('adTone').value;
-            
-            document.getElementById('placeholderText').classList.add('hidden');
-            document.getElementById('outputContainer').classList.remove('hidden');
-
-            let templates = {
-                luxurious: `<strong>Headline:</strong> Experience Excellence. <br><br>Elevate your lifestyle with ${product}. Craftsmanship meets modern sophistication. ${benefit}—because you deserve nothing less than elite. <br><br><strong>CTA:</strong> Discover the Collection.`,
-                bold: `<strong>Headline:</strong> STOP SETTLING. <br><br>Get the results you've been waiting for. ${product} is here to change the game. ${benefit}. Limited availability—act now or miss out forever. <br><br><strong>CTA:</strong> GRAB YOURS NOW.`,
-                minimalist: `<strong>Headline:</strong> Simply ${product}. <br><br>Quality redefined. <br>Design perfected. <br>${benefit}. <br><br><strong>CTA:</strong> Shop Essentials.`
-            };
-
-            document.getElementById('copyResult').innerHTML = templates[tone];
+        let currentTone = 'luxurious';
+        function setTone(tone, btn) {
+            currentTone = tone;
+            document.querySelectorAll('.tone-btn').forEach(b => {
+                b.classList.remove('border-yellow-500', 'text-yellow-500', 'bg-yellow-500/10');
+                b.classList.add('border-white/5', 'text-zinc-500');
+            });
+            btn.classList.add('border-yellow-500', 'text-yellow-500', 'bg-yellow-500/10');
         }
 
-        function copyToClipboard() {
-            const text = document.getElementById('copyResult').innerText;
-            navigator.clipboard.writeText(text);
-            alert('Copy saved to clipboard!');
+        function generateEverything() {
+            const product = document.getElementById('productName').value || 'Service';
+            document.getElementById('placeholder').classList.add('hidden');
+            document.getElementById('outputContainer').classList.remove('hidden');
+
+            // SEO Keywords Logic
+            const keywords = [
+                `Best ${product} 2026`, `${product} USA`, `Luxury ${product} UK`, 
+                `Affordable ${product}`, `Premium ${product} near me`, `Custom ${product} Design`,
+                `${product} Reviews`, `Top-rated ${product}`
+            ];
+            
+            const keywordList = document.getElementById('keywordList');
+            keywordList.innerHTML = '';
+            keywords.forEach(kw => {
+                const span = document.createElement('span');
+                span.className = 'keyword-tag px-4 py-2 rounded-full text-[9px] font-bold uppercase tracking-wider';
+                span.innerText = kw;
+                keywordList.appendChild(span);
+            });
+
+            // Ad Copy Logic
+            if(currentTone === 'luxurious') {
+                document.getElementById('headOutput').innerText = `Pure Excellence. Redefined.`;
+                document.getElementById('bodyOutput').innerText = `Experience the pinnacle of ${product}. Our elite collection is crafted for those who demand nothing but the best. Precision, luxury, and timeless design combined.`;
+            } else {
+                document.getElementById('headOutput').innerText = `Transform Your ${product} Today!`;
+                document.getElementById('bodyOutput').innerText = `Stop settling for average. Get the high-performance ${product} you deserve. Limited time offer for UK/USA clients. Fast shipping and guaranteed results.`;
+            }
         }
     </script>
 </body>
