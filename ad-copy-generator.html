@@ -155,8 +155,8 @@
             <div class="absolute inset-0 w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></div>
         </div>
         <div>
-            <p id="notif-text" class="text-white text-[11px] font-bold leading-tight">
-                <span id="notif-count" class="text-yellow-500">80</span> people generating high-converting ad copies
+            <p id="notif-text" class="text-white text-[11px] font-bold leading-tight uppercase">
+                <span id="notif-count" class="text-yellow-500">80</span> people ranking their stores on Google
             </p>
             <p class="text-gray-500 text-[9px] uppercase tracking-widest font-black mt-1">Live Now</p>
         </div>
@@ -165,10 +165,10 @@
 
 <script>
     const messages = [
-        { count: 80, text: "people generating high-converting ad copies" },
-        { count: 42, text: "Facebook & TikTok ads optimized in last hour" },
-        { count: 156, text: "active marketers using JawadHub" },
-        { count: 28, text: "luxury brand scripts written today" }
+        { count: 80, text: "people ranking their stores on Google" },
+        { count: 56, text: "SEO strategies generated for USA markets" },
+        { count: 192, text: "keywords researched in last 10 mins" },
+        { count: 34, text: "brands scaling with AI copywriting today" }
     ];
 
     let msgIndex = 0;
@@ -178,7 +178,7 @@
         if(!notification || !notifText) return;
 
         const current = messages[msgIndex];
-        const randomExtra = Math.floor(Math.random() * 6); // 0-5 ka random izafa
+        const randomExtra = Math.floor(Math.random() * 7); // 0-6 ka random change
         const totalCount = current.count + randomExtra;
         
         notifText.innerHTML = `<span class="text-yellow-500">${totalCount}</span> ${current.text}`;
