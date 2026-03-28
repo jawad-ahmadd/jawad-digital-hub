@@ -169,6 +169,55 @@
             </div>
         </div>
     </footer>
+    <div id="live-notification" class="fixed bottom-8 left-6 z-[200] transform translate-y-20 opacity-0 transition-all duration-700 ease-in-out">
+    <div class="bg-zinc-900/90 backdrop-blur-md border border-white/10 p-4 rounded-2xl shadow-2xl flex items-center space-x-4 max-w-[300px]">
+        <div class="relative flex items-center justify-center">
+            <div class="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+            <div class="absolute inset-0 w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></div>
+        </div>
+        <div>
+            <p id="notif-text" class="text-white text-[11px] font-bold leading-tight uppercase">
+                <span id="notif-count" class="text-yellow-500">134</span> people viewing this agency
+            </p>
+            <p class="text-gray-500 text-[9px] uppercase tracking-widest font-black mt-1">Live Now</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Is script ko bhi aap purane script ke andar ya uske upar kahin bhi rakh sakte hain
+    const messages = [
+        { count: 134, text: "people viewing this agency" },
+        { count: 71, text: "people using this tool" },
+        { count: 12, text: "copies generated in last 5 mins" },
+        { count: 45, text: "active strategies being built" }
+    ];
+
+    let msgIndex = 0;
+    function showNotification() {
+        const notification = document.getElementById('live-notification');
+        const notifText = document.getElementById('notif-text');
+        if(!notification || !notifText) return;
+
+        const current = messages[msgIndex];
+        const randomExtra = Math.floor(Math.random() * 5);
+        const totalCount = current.count + randomExtra;
+        
+        notifText.innerHTML = `<span class="text-yellow-500">${totalCount}</span> ${current.text}`;
+        
+        notification.classList.remove('translate-y-20', 'opacity-0');
+        
+        setTimeout(() => {
+            notification.classList.add('translate-y-20', 'opacity-0');
+            msgIndex = (msgIndex + 1) % messages.length;
+        }, 6000);
+    }
+
+    setTimeout(() => {
+        showNotification();
+        setInterval(showNotification, 15000);
+    }, 3000);
+</script>
 
     <script>
         // MOBILE MENU LOGIC
