@@ -176,8 +176,8 @@
             <div class="absolute inset-0 w-2.5 h-2.5 bg-green-500 rounded-full animate-ping"></div>
         </div>
         <div>
-            <p id="notif-text" class="text-white text-[11px] font-bold leading-tight uppercase">
-                <span id="notif-count" class="text-yellow-500">134</span> people viewing this agency
+            <p id="notif-text" class="text-white text-[11px] font-bold leading-tight">
+                <span id="notif-count" class="text-yellow-500">80</span> people calculating their ad budgets
             </p>
             <p class="text-gray-500 text-[9px] uppercase tracking-widest font-black mt-1">Live Now</p>
         </div>
@@ -185,12 +185,11 @@
 </div>
 
 <script>
-    // Is script ko bhi aap purane script ke andar ya uske upar kahin bhi rakh sakte hain
     const messages = [
-        { count: 134, text: "people viewing this agency" },
-        { count: 71, text: "people using this tool" },
-        { count: 12, text: "copies generated in last 5 mins" },
-        { count: 45, text: "active strategies being built" }
+        { count: 80, text: "people calculating their ad budgets" },
+        { count: 15, text: "UK/USA store plans optimized in last hour" },
+        { count: 240, text: "active users on JawadHub right now" },
+        { count: 9, text: "high-ROAS strategies scaled today" }
     ];
 
     let msgIndex = 0;
@@ -200,8 +199,8 @@
         if(!notification || !notifText) return;
 
         const current = messages[msgIndex];
-        const randomExtra = Math.floor(Math.random() * 5);
-        const totalCount = current.count + randomExtra;
+        // Thora sa random number change taake natural lagay
+        const totalCount = current.count + Math.floor(Math.random() * 5);
         
         notifText.innerHTML = `<span class="text-yellow-500">${totalCount}</span> ${current.text}`;
         
@@ -210,12 +209,12 @@
         setTimeout(() => {
             notification.classList.add('translate-y-20', 'opacity-0');
             msgIndex = (msgIndex + 1) % messages.length;
-        }, 6000);
+        }, 6000); // 6 seconds tak show hoga
     }
 
     setTimeout(() => {
         showNotification();
-        setInterval(showNotification, 15000);
+        setInterval(showNotification, 15000); // Har 15 seconds baad naya message
     }, 3000);
 </script>
 
