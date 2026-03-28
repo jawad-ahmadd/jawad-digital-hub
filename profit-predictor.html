@@ -132,29 +132,28 @@
             tag: 'Finance'
         },
         {
-            filename: 'ad-budget-planner.html',
+            filename: 'ad-budget-planner.html', // Fixed: Exact name from your screenshot
             name: 'Budget Planner',
             desc: 'Scale your ad spend with precision projections.',
             tag: 'Scaling'
         },
         {
-            filename: 'ad-copy-generator.html',
+            filename: 'ad-copy-generator.html', // Fixed: Exact name from your screenshot
             name: 'SEO & Copy AI',
             desc: 'Generate ranking strategies and high-converting copy.',
             tag: 'Marketing'
         }
     ];
 
-    // Current page ka filename nikalne ka sab se asaan tareeka
-    const currentFile = window.location.href.split('/').pop();
+    // Current page nikalne ka sab se solid tareeka
+    const currentPath = window.location.pathname.split("/").pop().toLowerCase() || 'index.html';
     const navContainer = document.getElementById('tools-nav-container');
 
     if (navContainer) {
         navContainer.innerHTML = ''; 
-        
         toolsList.forEach(tool => {
-            // Agar current file tool ki filename nahi hai, to card dikhao
-            if (currentFile !== tool.filename) {
+            // Check if current file is NOT the tool's filename
+            if (currentPath !== tool.filename.toLowerCase()) {
                 const toolCard = `
                     <a href="${tool.filename}" class="group block bg-zinc-900/40 border border-white/5 p-8 rounded-[2rem] hover:border-yellow-500/50 transition-all duration-500 gold-glow">
                         <div class="flex justify-between items-start mb-6">
@@ -172,7 +171,6 @@
         });
     }
 </script>
-
     <footer class="bg-black border-t border-white/5 pt-24 pb-12">
         <div class="max-w-7xl mx-auto px-6 md:px-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
