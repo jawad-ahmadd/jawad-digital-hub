@@ -126,34 +126,35 @@
     <script>
     const toolsList = [
         {
-            filename: 'profit-predictor.html',
+            filename: 'profit-predictor.html', // Check karein: kya file ka naam yahi hai?
             name: 'Profit Predictor',
             desc: 'Calculate exact ROI and Net Profit for your products.',
             tag: 'Finance'
         },
         {
-            filename: 'ad-budget-planner.html', // Fixed: Exact name from your screenshot
+            filename: 'budget-planner.html', // Check karein: kya file ka naam yahi hai?
             name: 'Budget Planner',
             desc: 'Scale your ad spend with precision projections.',
             tag: 'Scaling'
         },
         {
-            filename: 'ad-copy-generator.html', // Fixed: Exact name from your screenshot
+            filename: 'seo-copy.html', // Check karein: kya file ka naam yahi hai?
             name: 'SEO & Copy AI',
             desc: 'Generate ranking strategies and high-converting copy.',
             tag: 'Marketing'
         }
     ];
 
-    // Current page nikalne ka sab se solid tareeka
-    const currentPath = window.location.pathname.split("/").pop().toLowerCase() || 'index.html';
+    // Current page ka naam nikaalne ka sahi tareeka
+    const path = window.location.pathname;
+    const activePage = path.substring(path.lastIndexOf('/') + 1).toLowerCase();
     const navContainer = document.getElementById('tools-nav-container');
 
     if (navContainer) {
-        navContainer.innerHTML = ''; 
+        navContainer.innerHTML = ''; // Pehle container khali karein
         toolsList.forEach(tool => {
-            // Check if current file is NOT the tool's filename
-            if (currentPath !== tool.filename.toLowerCase()) {
+            // Case-insensitive check taake link miss na ho
+            if (activePage !== tool.filename.toLowerCase()) {
                 const toolCard = `
                     <a href="${tool.filename}" class="group block bg-zinc-900/40 border border-white/5 p-8 rounded-[2rem] hover:border-yellow-500/50 transition-all duration-500 gold-glow">
                         <div class="flex justify-between items-start mb-6">
