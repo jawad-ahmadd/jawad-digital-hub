@@ -1,8 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /privacy.html
-Disallow: /terms.html
-Disallow: /refund.html
-Disallow: /shipping.html
 
 Sitemap: https://www.jawaddigitalhub.com/sitemap.xml
