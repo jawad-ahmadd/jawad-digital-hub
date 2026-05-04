@@ -65,6 +65,37 @@
                 Back to Services
             </a>
         </div>
+        <!-- Neon Glow Responsive Marquee -->
+<div id="uw-neon-bar" style="background:#000; border-y:1px solid #14a80033; overflow:hidden; cursor:pointer; padding:10px 0; width:100%; position:relative; z-index:99;">
+  <style>
+    @keyframes neonScroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    @keyframes neonPulse { 
+      0%, 100% { text-shadow: 0 0 7px #14a800, 0 0 10px #14a800; } 
+      50% { text-shadow: 0 0 15px #14a800, 0 0 20px #1ed760, 0 0 25px #14a800; } 
+    }
+    .n-scroll { display:flex; width:fit-content; animation:neonScroll 18s linear infinite; }
+    .n-txt { color:#fff; font:italic 900 clamp(0.9rem, 3.5vw, 1.15rem) 'Inter',sans-serif; text-transform:uppercase; white-space:nowrap; padding-right:60px; letter-spacing:1.5px; }
+    .neon-upwork { 
+      color: #14a800; 
+      animation: neonPulse 1.5s ease-in-out infinite;
+      font-weight: 950;
+    }
+    #uw-neon-bar:hover .n-scroll { animation-play-state:paused; }
+  </style>
+  
+  <div class="n-scroll">
+    <div class="n-txt"><span class="neon-upwork">Hire me on Upwork</span> — Shopify Full-Stack Expert — Jawad Business Hub —</div>
+    <div class="n-txt"><span class="neon-upwork">Hire me on Upwork</span> — Shopify Full-Stack Expert — Jawad Business Hub —</div>
+    <div class="n-txt"><span class="neon-upwork">Hire me on Upwork</span> — Shopify Full-Stack Expert — Jawad Business Hub —</div>
+    <div class="n-txt"><span class="neon-upwork">Hire me on Upwork</span> — Shopify Full-Stack Expert — Jawad Business Hub —</div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('uw-neon-bar').onclick = () => {
+    window.open('https://www.upwork.com/freelancers/~01268126f753065c26?mp_source=share', '_blank');
+  };
+</script>
 
         <header class="mb-24">
             <span class="text-yellow-500 text-[10px] font-black uppercase tracking-[0.5em] mb-4 block italic">Global E-Commerce Engineering</span>
