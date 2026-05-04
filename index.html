@@ -98,6 +98,66 @@
         </div>
     </div>
     <main>
+        <!-- Fully Responsive & High-Speed Upwork Marquee -->
+<div id="upwork-cta-bar" style="background:#000; border-bottom:1px solid rgba(255,153,0,0.2); overflow:hidden; cursor:pointer; padding:12px 0; width:100%; position:relative; z-index:99;">
+  <style>
+    /* Hardware acceleration for ultra-smooth performance */
+    @keyframes scrollMarquee { 
+      from { transform:translateX(0); } 
+      to { transform:translateX(-50%); } 
+    }
+    
+    .marquee-inner { 
+      display:flex; 
+      width:fit-content; 
+      animation:scrollMarquee 15s linear infinite; 
+      will-change:transform; 
+    }
+    
+    .marquee-text { 
+      color:#fff; 
+      font-family:'Inter',sans-serif; 
+      font-weight:900; 
+      font-style:italic; 
+      /* Responsive font size: larger on desktop, perfectly readable on mobile */
+      font-size: clamp(1rem, 4vw, 1.2rem); 
+      text-transform:uppercase; 
+      white-space:nowrap; 
+      padding-right:40px; 
+      letter-spacing:1px; 
+    }
+    
+    .upwork-green { 
+      color:#14a800; 
+      text-shadow: 0 0 10px rgba(20,168,0,0.2); 
+    }
+    
+    /* Pause on hover for better UX */
+    #upwork-cta-bar:hover .marquee-inner { 
+      animation-play-state:paused; 
+    }
+
+    /* Mobile specific adjustment to ensure smoothness */
+    @media (max-width: 768px) {
+      .marquee-inner { animation-duration: 10s; } /* Slightly faster on small screens for better engagement */
+      .marquee-text { padding-right: 30px; }
+    }
+  </style>
+  
+  <div class="marquee-inner">
+    <div class="marquee-text"><span class="upwork-green">Hire me on Upwork</span> — Shopify Full-Stack Expert — 2026 Elite Solutions —</div>
+    <div class="marquee-text"><span class="upwork-green">Hire me on Upwork</span> — Shopify Full-Stack Expert — 2026 Elite Solutions —</div>
+    <div class="marquee-text"><span class="upwork-green">Hire me on Upwork</span> — Shopify Full-Stack Expert — 2026 Elite Solutions —</div>
+    <div class="marquee-text"><span class="upwork-green">Hire me on Upwork</span> — Shopify Full-Stack Expert — 2026 Elite Solutions —</div>
+  </div>
+</div>
+
+<script>
+  // Instant Redirect to your Upwork Profile
+  document.getElementById('upwork-cta-bar').onclick = function() {
+    window.open('https://www.upwork.com/freelancers/~01268126f753065c26?mp_source=share', '_blank');
+  };
+</script>
         <header id="home" class="relative min-h-screen flex items-center justify-center text-center px-6 overflow-hidden">
     <div class="absolute inset-0 z-0">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-yellow-600/10 blur-[120px] rounded-full"></div>
