@@ -219,63 +219,26 @@
         </div>
     </div>
 </section>
-        <!-- Fully Responsive & High-Speed Upwork Marquee -->
-<div id="upwork-cta-bar" style="background:#000; border-bottom:1px solid rgba(255,153,0,0.2); overflow:hidden; cursor:pointer; padding:12px 0; width:100%; position:relative; z-index:99;">
+        <!-- Compact Ultra-Fast Marquee -->
+<div id="upwork-bar" style="background:#000; border-y:1px solid #ff990033; overflow:hidden; cursor:pointer; padding:12px 0; width:100%; position:relative; z-index:99;">
   <style>
-    /* Hardware acceleration for ultra-smooth performance */
-    @keyframes scrollMarquee { 
-      from { transform:translateX(0); } 
-      to { transform:translateX(-50%); } 
-    }
-    
-    .marquee-inner { 
-      display:flex; 
-      width:fit-content; 
-      animation:scrollMarquee 15s linear infinite; 
-      will-change:transform; 
-    }
-    
-    .marquee-text { 
-      color:#fff; 
-      font-family:'Inter',sans-serif; 
-      font-weight:900; 
-      font-style:italic; 
-      /* Responsive font size: larger on desktop, perfectly readable on mobile */
-      font-size: clamp(1rem, 4vw, 1.2rem); 
-      text-transform:uppercase; 
-      white-space:nowrap; 
-      padding-right:40px; 
-      letter-spacing:1px; 
-    }
-    
-    .upwork-green { 
-      color:#14a800; 
-      text-shadow: 0 0 10px rgba(20,168,0,0.2); 
-    }
-    
-    /* Pause on hover for better UX */
-    #upwork-cta-bar:hover .marquee-inner { 
-      animation-play-state:paused; 
-    }
-
-    /* Mobile specific adjustment to ensure smoothness */
-    @media (max-width: 768px) {
-      .marquee-inner { animation-duration: 10s; } /* Slightly faster on small screens for better engagement */
-      .marquee-text { padding-right: 30px; }
-    }
+    @keyframes move { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+    .m-scroll { display:flex; width:fit-content; animation:move 15s linear infinite; will-change:transform; }
+    .m-txt { color:#fff; font:italic 900 clamp(0.9rem, 3vw, 1.1rem) 'Inter',sans-serif; text-transform:uppercase; white-space:nowrap; padding-right:50px; letter-spacing:1px; }
+    .uw-grn { color:#14a800; text-shadow: 0 0 8px rgba(20,168,0,0.4); } /* Glowing Upwork Green */
+    #upwork-bar:hover .m-scroll { animation-play-state:paused; }
   </style>
   
-  <div class="marquee-inner">
-    <div class="marquee-text"><span class="upwork-green">Hire me on Upwork</span> — Shopify Full-Stack Expert — 2026 Elite Solutions —</div>
-    <div class="marquee-text"><span class="upwork-green">Hire me on Upwork</span> — Shopify Full-Stack Expert — 2026 Elite Solutions —</div>
-    <div class="marquee-text"><span class="upwork-green">Hire me on Upwork</span> — Shopify Full-Stack Expert — 2026 Elite Solutions —</div>
-    <div class="marquee-text"><span class="upwork-green">Hire me on Upwork</span> — Shopify Full-Stack Expert — 2026 Elite Solutions —</div>
+  <div class="m-scroll">
+    <div class="m-txt"><span class="uw-grn">Hire me on Upwork</span> — Shopify Full-Stack Expert — Jawad Business Hub —</div>
+    <div class="m-txt"><span class="uw-grn">Hire me on Upwork</span> — Shopify Full-Stack Expert — Jawad Business Hub —</div>
+    <div class="m-txt"><span class="uw-grn">Hire me on Upwork</span> — Shopify Full-Stack Expert — Jawad Business Hub —</div>
+    <div class="m-txt"><span class="uw-grn">Hire me on Upwork</span> — Shopify Full-Stack Expert — Jawad Business Hub —</div>
   </div>
 </div>
 
 <script>
-  // Instant Redirect to your Upwork Profile
-  document.getElementById('upwork-cta-bar').onclick = function() {
+  document.getElementById('upwork-bar').onclick = () => {
     window.open('https://www.upwork.com/freelancers/~01268126f753065c26?mp_source=share', '_blank');
   };
 </script>
